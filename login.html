@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Osam-login</title>
+    <link rel="stylesheet" href="./css/login.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="form-container">
+
+        <div class="login-sign " id="login">
+
+            <div class="container">
+                <h1>
+                    Welcome Back
+                </h1>
+                <label for="email"><b class="bx bx-envelope"></b>Enter your email</label>
+                <input type="email" class="inputs" name="email">
+                <label for="password"><b class="bx bx-lock-alt"></b>password </label>
+                <input type="password" class="inputs" name="password">
+                <button>Log in</button>
+
+            </div>
+            <div>don't have an account? <span class="link" onclick="toggle('create')">Register</span></div>
+        </div>
+        <div class="login-sign hide-item" id="create">
+
+            <div class="container">
+                <h1>Register</h1>
+                <label for="F-name">Enter your first name</label>
+                <input type="text" name="F-name" class="inputs">
+                <label for="L-name">Last Name</label>
+                <input type="text" name="L-name" class="inputs">
+                <label for="gender">Choose your gender </label>
+                <select name="gender">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+                <label for="email">Email</label>
+                <input type="password" name="email" class="inputs">
+                <label for="password">Password </label>
+                <input type="password" name="password" class="inputs">
+            </div>
+            <button>Register</button>
+            <div>have an account?
+                <span class="link" onclick="toggle('login')">Log in</span>
+            </div>
+
+
+        </div>
+        <div class="overlay">
+
+        </div>
+
+    </div>
+    <div class="bx bx-left-arrow-alt back-arr" onclick="document.location='./index.html'"></div>
+
+    <script src="./scripts/login.js"></script>
+</body>
+
+</html>

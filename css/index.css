@@ -1,0 +1,488 @@
+body {
+  --border-radius: 20px;
+}
+
+.side-buttons button {
+  background-color: transparent;
+  padding: 8px 10px;
+  cursor: pointer;
+  font-family: inherit;
+  color: rgb(60, 60, 60);
+  font-size: var(--default-font);
+  font-weight: 500;
+  margin-right: 10px;
+  border: none;
+}
+nav {
+  grid-template-columns: 1fr 2fr !important;
+}
+.locations {
+  overflow-x: auto;
+  display: flex;
+  width: 100%;
+  gap: 50px;
+  scroll-behavior: smooth;
+  resize: none;
+  white-space: none;
+  padding: 0;
+}
+.locations::-webkit-scrollbar {
+  display: none;
+}
+.scrol {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#rightbutton,
+#leftbutton {
+  background-color: rgb(31, 30, 30);
+  border: none;
+  border-radius: 50%;
+  padding: 10px 10px;
+  cursor: pointer;
+  color: white;
+  font-size: 1.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 10px;
+}
+.outer-container {
+  margin: 80px 40px;
+}
+.outer-container h1 {
+  text-align: center;
+  font-size: 2.1rem;
+  font-weight: bold;
+  margin-bottom: 50px;
+}
+.card {
+  background-position: center;
+  background-size: cover;
+  min-width: 300px;
+  min-width: 30%;
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 5px;
+}
+.card1 {
+  background-image: url(../assets/Ontario\ CA.jpg);
+}
+.card2 {
+  background-image: url(../assets/Abuja2.jpeg);
+}
+.card3 {
+  background-image: url(../assets/Lagos.jpeg);
+}
+.card4 {
+  background-image: url(../Ibadan.jpg);
+}
+.card5 {
+  background-image: url(../assets/Birmhingam\ england.jpeg);
+}
+.card a {
+  font-size: 25px;
+  font-weight: 600;
+  color: white;
+}
+
+#search-btn {
+  cursor: pointer;
+  border: none;
+  color: rgb(41, 40, 40);
+  background-color: white;
+  padding: 20px;
+  border-top-right-radius: var(--border-radius);
+  border-bottom-right-radius: var(--border-radius);
+}
+
+#search-now {
+  border: none;
+  background-color: white;
+  padding: 20px;
+  width: 60%;
+  border-top-left-radius: var(--border-radius);
+  border-bottom-left-radius: var(--border-radius);
+}
+.search-container {
+  margin: 0% auto;
+  width: 100%;
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-section {
+  height: 80vh;
+  background-image: url(../assets/bb3.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -1;
+  position: absolute;
+  width: 100%;
+}
+.hide-item {
+  display: none;
+}
+.view-item {
+  display: flex;
+}
+
+.hero-text {
+  padding: 20px;
+  color: white;
+  text-align: center;
+  margin-bottom: 30px;
+}
+.hero-container {
+  position: relative;
+  display: flex;
+  /* background-color: blueviolet; */
+  height: 480px;
+  max-height: 480px;
+  min-height: 350px;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+.hero-text h1 {
+  font-size: 2.8rem;
+}
+
+.overlay {
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0.6;
+  position: absolute;
+  z-index: -1;
+}
+
+.default-properties-container {
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  display: flex;
+}
+.hero-second-container {
+  width: 100%;
+}
+
+/* .search {
+  margin-bottom: 20px
+} */
+
+.listings {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.listing {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin: 10px;
+  padding: 10px;
+  width: 200px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.listing img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.listing h2 {
+  font-size: 1.2em;
+  margin: 10px 0;
+}
+.about-cont {
+  display: flex;
+  padding: 50px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+.about-image {
+  width: 500px;
+}
+.about-image img {
+  width: 100%;
+  border-radius: 5px;
+}
+.about-text {
+  width: 600px;
+}
+.about-text ul li {
+  padding: 10px 0px;
+  font-size: 1em;
+}
+
+.listing p {
+  margin: 0;
+}
+.ads {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.793);
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+  z-index: 3;
+}
+
+.ads-image {
+  background-image: url(../assets/WhatsApp\ Image\ 2024-08-01\ at\ 11.42.57_542124e9.jpg);
+  width: 100%;
+  height: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.ads-x {
+  color: white;
+  font-size: 2em;
+  top: 20px;
+  position: absolute;
+  right: 50px;
+  cursor: pointer;
+}
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.ads-x:hover {
+  color: red;
+}
+.footer {
+  background-color: rgb(31, 31, 31);
+  height: 400px;
+  width: 100%;
+}
+#open-nav,
+#close-nav {
+  display: none;
+}
+
+@media screen and (max-width: 980px) {
+  .hero-container {
+    max-height: 350px;
+  }
+  .search-container {
+    margin: 0% auto;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .hero-text h1 {
+    font-size: 2em;
+  }
+  .hero-text h2 {
+    font-size: 1em;
+  }
+  .outer-container {
+    margin: 5px 20px;
+  }
+}
+@media screen and (max-width: 685px) {
+  nav {
+    width: 0px;
+    top: 0;
+    right: 0;
+    left: 0;
+    padding: 0;
+    margin: 0;
+    position: fixed;
+    display: flex;
+    background-color: white;
+    z-index: 2;
+  }
+  #open-nav,
+  #close-nav {
+    display: flex;
+    position: absolute;
+    top: 20px;
+    right: 10px;
+    font-size: 1.4em;
+    padding: 0;
+    margin: 0;
+    color: black;
+    justify-content: center;
+    align-items: center;
+  }
+  .side-buttons button {
+    width: 100%;
+    margin-top: 20px;
+  }
+  .navigation {
+    display: none;
+    position: fixed;
+    background-color: rgb(255, 255, 255);
+    padding-top: 100px;
+    /* width: 250px;
+    padding: 50px 20px; */
+    margin: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 2;
+  }
+  body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+  }
+  .navigation ul {
+    width: 100%;
+    padding: 0;
+    display: block;
+  }
+  .navigation ul li {
+    padding: 10px 0px;
+    margin-bottom: 15px;
+    width: 100%;
+  }
+  .navigation ul li:hover {
+    width: 100%;
+    padding: 10px 0px;
+    background-color: var(--border-color);
+  }
+  .logo h1 {
+    font-size: 1.8em !important;
+  }
+  .logo span {
+    font-size: 0.4em !important;
+    text-align: center;
+  }
+  .search-container {
+    justify-content: space-around;
+    padding: 10px 0px;
+    display: flex;
+    gap: 0px;
+    align-items: start;
+    justify-content: start;
+    margin: 20px 0px 30px 0px !important;
+  }
+  .search input,
+  .search button {
+    padding: 5px;
+    margin: 2px !important;
+  }
+  .hero-text {
+    padding: 10px 15px;
+  }
+  .hero-text h1 {
+    font-size: 2rem;
+    text-align: left;
+  }
+  .hero-text h2 {
+    padding: 0;
+    font-size: 1em;
+    text-align: start;
+  }
+  .hero-text p {
+    line-height: 20px;
+    font-size: 0.9em;
+    padding-inline-start: 0;
+    text-align: left;
+    font-weight: 400;
+    line-height: 1.2em;
+  }
+
+  .hero-text {
+    padding: 10px;
+    color: white;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  .hero-section {
+    height: 50vh;
+    background-image: url(../assets/bb3.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -1;
+    position: absolute;
+    width: 100%;
+    background-position: center;
+  }
+  .hero-container {
+    align-items: start;
+    padding-top: 120px;
+    text-align: left;
+    margin-bottom: 0;
+    height: 100%;
+  }
+  #search-btn {
+    padding: 10px 20px;
+    margin: 0px 10px;
+    border-radius: 5px;
+  }
+
+  #search-now {
+    border: none;
+    background-color: white;
+    padding: 10px 20px;
+    width: 70%;
+    margin: 0px 0px 0px 10px;
+    border-radius: 5px;
+    position: relative;
+  }
+  #rightbutton,
+  #leftbutton {
+    background-color: rgb(31, 30, 30);
+    border: none;
+    border-radius: 50%;
+    padding: 10px 10px;
+    cursor: pointer;
+    color: white;
+    font-size: 1.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 10px;
+  }
+  .outer-container {
+    margin: 40px 20px !important;
+  }
+  .outer-container h1 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+    margin-top: 50px;
+  }
+  .scrol {
+    margin-top: 20px;
+  }
+  .locations {
+    gap: 10px;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+  .card {
+    min-width: 100%;
+  }
+
+  #rightbutton,
+  #leftbutton {
+    margin: 0 5px;
+  }
+  .ads-x {
+    right: 10px;
+    cursor: pointer;
+  }
+}
