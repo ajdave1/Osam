@@ -464,13 +464,10 @@ nav {
     margin-top: 20px;
   }
   .search input {
-    border: 1.5px solid var(--border-color);
+    border: 1px solid var(--border-color);
     border-right: none;
     background-color: white;
     padding: 5px 10px;
-  border-radius:none;
-    border-top-left-radius:5px
-    border-bottom-left-radius: 5px;
   }
   .logo {
     padding: 0;
