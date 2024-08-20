@@ -93,16 +93,19 @@ nav {
 
 #search-btn {
   cursor: pointer;
-  border: none;
+  border: 1.5px solid var(--border-color);
   color: rgb(41, 40, 40);
   background-color: white;
-  padding: 20px;
+  padding: 19px;
+  font-size: 17px;
+  border-left: none;
   border-top-right-radius: var(--border-radius);
   border-bottom-right-radius: var(--border-radius);
 }
 
 #search-now {
-  border: none;
+  border: 1.5px solid var(--border-color);
+  border-right: none;
   background-color: white;
   padding: 20px;
   width: 60%;
@@ -112,6 +115,7 @@ nav {
 .search-container {
   margin: 0% auto;
   width: 100%;
+  padding: 10px 5px;
   margin-bottom: 30px;
   display: flex;
   align-items: center;
@@ -274,7 +278,15 @@ nav {
 #close-nav {
   display: none;
 }
-
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 2;
+  margin: 0;
+  background-color: white;
+  border-bottom: 1.5px solid var(--border-color);
+}
 @media screen and (max-width: 980px) {
   .hero-container {
     max-height: 350px;
@@ -294,6 +306,7 @@ nav {
     margin: 5px 20px;
   }
 }
+
 @media screen and (max-width: 685px) {
   nav {
     width: 0px;
@@ -302,9 +315,10 @@ nav {
     left: 0;
     padding: 0;
     margin: 0;
-    position: fixed;
+    border: none !important;
+    position: absolute;
     display: flex;
-    background-color: white;
+    background-color: transparent;
     z-index: 2;
   }
   #open-nav,
@@ -323,6 +337,9 @@ nav {
   .side-buttons button {
     width: 100%;
     margin-top: 20px;
+  }
+  #open-nav {
+    color: whitesmoke;
   }
   .navigation {
     display: none;
@@ -348,6 +365,7 @@ nav {
   }
   .navigation ul {
     width: 100%;
+    background-color: transparent;
     padding: 0;
     display: block;
   }
@@ -369,36 +387,56 @@ nav {
     text-align: center;
   }
   .search-container {
+    position: absolute;
+    background-color: transparent;
     justify-content: space-around;
     padding: 10px 0px;
     display: flex;
     gap: 0px;
-    align-items: start;
-    justify-content: start;
-    margin: 20px 0px 30px 0px !important;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    margin-top: 150px;
   }
-  .search input,
+  .sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+    margin: 0;
+    background-color: white;
+    border-bottom: 1.5px solid var(--border-color);
+  }
+  /* .search input,
   .search button {
     padding: 5px;
     margin: 2px !important;
-  }
+  } */
   .hero-text {
-    padding: 10px 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    text-align: start;
   }
   .hero-text h1 {
-    font-size: 2rem;
-    text-align: left;
+    font-size: 2.4rem;
+    font-weight: 900;
+    line-height: 1em;
+    text-indent: unset;
+    text-align: center;
+    margin: 0;
   }
   .hero-text h2 {
     padding: 0;
     font-size: 1em;
-    text-align: start;
+    text-align: center;
   }
   .hero-text p {
     line-height: 20px;
     font-size: 0.9em;
     padding-inline-start: 0;
-    text-align: left;
+
     font-weight: 400;
     line-height: 1.2em;
   }
@@ -427,19 +465,22 @@ nav {
     height: 100%;
   }
   #search-btn {
-    padding: 10px 20px;
-    margin: 0px 10px;
-    border-radius: 5px;
+    padding: 14px;
+    border-bottom-right-radius: 15px;
+    border-top-right-radius: 15px;
+    border: 1.5px solid var(--border-color);
+    border-left: none;
+    font-size: 17px;
   }
 
   #search-now {
-    border: none;
-    background-color: white;
-    padding: 10px 20px;
+    padding: 15px 20px;
     width: 70%;
-    margin: 0px 0px 0px 10px;
-    border-radius: 5px;
+    border-bottom-left-radius: 15px;
+    border-top-left-radius: 15px;
     position: relative;
+    border: 1.5px solid var(--border-color);
+    border-right: none;
   }
   #rightbutton,
   #leftbutton {

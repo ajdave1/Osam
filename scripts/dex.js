@@ -20,3 +20,12 @@ scrollRight.addEventListener("click", () => {
   container.scrollLeft += 280;
 });
 viewmobilenav(navigation, opennav, closenav);
+const navBar = document.querySelector("nav");
+const search_bar = document.querySelector(".search-container");
+window.addEventListener("scroll", () => {
+  if (window.scrollY > navBar.offsetHeight) {
+    search_bar.classList.add("sticky");
+  } else {
+    search_bar.classList.remove("sticky");
+  }
+});
