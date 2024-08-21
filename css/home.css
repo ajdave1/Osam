@@ -7,8 +7,9 @@
 .profile-name {
   font-size: 17px;
   font-weight: 600;
+  padding: 5px 0px;
   text-transform: capitalize;
-  text-align: center;
+  border-bottom: 1px solid var(--border-color);
 }
 nav {
   display: grid;
@@ -27,7 +28,7 @@ body {
   position: fixed;
 } */
 .hide-item {
-  display: none;
+  display: none !important;
 }
 .view-item {
   display: flex;
@@ -321,18 +322,21 @@ nav {
   display: none;
 }
 .user-navigation {
-  display: none;
   position: absolute;
-  top: 70px;
-  height: 200px;
+  top: 75px;
+  right: 40px;
+  height: 100px;
+  width: 250px;
+  padding: 10px;
   border: 1px solid var(--border-color);
   z-index: 2 !important;
   background-color: white;
-  box-shadow: 0px 2px 3px gray;
+  box-shadow: 0px 2px 5px gray;
   text-align: start;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  border-top: none;
 }
 .user-navigation p {
   font-size: 15px;
@@ -467,7 +471,10 @@ nav {
     align-items: center;
     justify-content: center;
     background-color: rgb(255, 255, 255);
-    z-index: -5;
+    z-index: -2;
+  }
+  .view-home-nav {
+    display: flex;
   }
   .side-buttons {
     margin: 0;
@@ -478,7 +485,6 @@ nav {
     justify-content: center;
     align-items: center;
     padding: 0px 0px;
-    position: relative;
   }
 
   .user-profile-image {
@@ -522,6 +528,7 @@ nav {
     align-items: center;
     margin-top: 16px;
   }
+
   .search input {
     width: 100%;
     position: relative;
@@ -535,6 +542,23 @@ nav {
     display: none;
     padding: 0;
   }
+  .user-navigation {
+    width: 180px;
+    padding: 20px 15px 0px 15px;
+    left: 20px;
+    font-size: 12px;
+  }
+  .user-navigation p {
+    font-size: 13px;
+  }
+  .profile-name {
+    font-size: 15px;
+    font-weight: 600;
+    padding: 5px 0px;
+    text-transform: capitalize;
+    border-bottom: none;
+  }
+
   .logo h1 {
     font-size: 1.5em;
     margin: 0;
