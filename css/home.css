@@ -10,6 +10,10 @@
   width: 100%;
   text-align: center;
 }
+nav {
+  display: grid;
+  grid-template-columns: 1fr 5fr 1fr;
+}
 body {
   width: 100vw;
   padding: 0;
@@ -183,6 +187,7 @@ nav {
   height: 410px;
   padding-bottom: 20px;
 }
+
 .property-image {
   width: 100%;
 }
@@ -221,6 +226,8 @@ nav {
 .navigation {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  justify-content: center;
   width: 100%;
 }
 .property-bottom p {
@@ -231,6 +238,9 @@ nav {
   font-weight: 400;
   vertical-align: middle;
   font-family: cursive;
+}
+.navigation ul li a:hover {
+  color: var(--primari-color);
 }
 .property-bottom p i {
   color: red;
@@ -258,7 +268,9 @@ nav {
 #save-property:hover {
   color: black;
 }
-
+.logo {
+  cursor: pointer;
+}
 .callus {
   display: flex;
   align-items: center;
@@ -305,12 +317,21 @@ nav {
 #filter-search {
   display: none;
 }
+.side-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.search input[type="search"]:focus {
+  border: 1px solid red !important;
+  box-shadow: 0px 0px 2px var(--primari-color);
+}
 .sign-out-button {
   display: none;
 }
 /* Mobile view // break-line */
 @media screen and (max-width: 685px) {
-  #filter-search {
+  /* #filter-search {
     display: none;
     position: fixed;
     align-items: center;
@@ -326,7 +347,7 @@ nav {
     cursor: pointer;
     border-radius: 5px;
     font-size: 14px;
-  }
+  } */
   .sign-out-button {
     display: block;
     color: red;
@@ -364,7 +385,7 @@ nav {
     align-items: center;
     text-align: center;
     z-index: 3;
-    background-color: rgb(250, 25, 25);
+    background-color: white;
     transition: 0.7s;
   }
   .navigation ul {
@@ -394,7 +415,7 @@ nav {
     position: absolute;
     top: 30px;
     right: 35px;
-    font-size: 1.3em;
+    font-size: 1.5em;
     padding: 0;
     margin: 0;
     color: rgb(42, 41, 41);
@@ -406,8 +427,9 @@ nav {
   }
 
   #open-nav {
-    right: 40px;
-    top: 35px;
+    right: 45px;
+    top: 32px;
+
     color: rgb(0, 0, 0);
   }
   #close-nav:hover {
@@ -416,39 +438,32 @@ nav {
   .home-navigation-list {
     position: fixed;
     top: 64px;
-    left: -300px;
+    left: 0;
     width: 100%;
     padding: 40px 0px;
-    padding-inline-start: 10%;
+    padding-inline-start: 10px;
     align-items: center;
     background-color: rgb(255, 255, 255);
     justify-content: start;
-    transition: 0.3s;
   }
   .side-buttons {
-    position: absolute;
-    top: 50px;
-    left: 0;
+    margin: 0;
+    padding: 0;
   }
   .profile-details {
     display: block;
     justify-content: center;
     align-items: center;
-    padding: 10px 0px;
+    padding: 0px 0px;
   }
 
-  .profile-name {
-    text-transform: capitalize;
-    font-size: 1em;
-    text-align: start;
-    margin: 10px 0px 0px 0px;
-  }
   .user-profile-image {
     display: flex;
     margin: 0;
   }
   .user-profile-image img {
     float: left;
+    width: 40px;
   }
 
   .home-nav {
@@ -462,35 +477,39 @@ nav {
     justify-content: center;
   }
   .search button {
-    background-color: var(--primari-color);
-    border: 1.5px solid var(--border-color);
-    padding: 0;
-    color: white;
-    width: 20%;
-    margin: 0px 5px;
-    border-radius: 5px;
+    color: black;
+    border: none;
     font-size: 1em;
-    padding: 4.5px 0px;
+    width: 10%;
+    margin: 0 4px;
+    font-size: 17px;
+    padding: 6px 0px;
+    position: absolute;
+    right: 0;
+
+    border-left: none;
   }
   .search {
     width: 100%;
     padding: 2px 0px;
     margin: 0% auto;
-    margin-left: 43px;
+    margin-left: 13px;
     justify-content: center;
     align-items: center;
-    margin-top: 20px;
+    margin-top: 16px;
   }
   .search input {
-    border: 1px solid var(--border-color);
-    border-radius: 5px;
+    width: 100%;
+    position: relative;
+    border: 2px solid var(--border-color);
+    border-radius: 7px;
     background-color: white;
-    padding: 5px 10px;
+    padding: 7px 40px 7px 10px;
   }
+
   .logo {
+    display: none;
     padding: 0;
-    margin-left: 10px;
-    margin-top: 7px;
   }
   .logo h1 {
     font-size: 1.5em;
@@ -607,7 +626,7 @@ nav {
     padding: 5px;
   }
   nav {
-    padding: 20px 10px;
+    padding: 25px 15px;
     border-bottom: 1px solid white;
   }
 }
