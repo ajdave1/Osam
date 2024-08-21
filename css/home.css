@@ -5,9 +5,9 @@
   flex-wrap: wrap;
 }
 .profile-name {
-  font-size: 0.7em;
+  font-size: 17px;
   font-weight: 600;
-  width: 100%;
+  text-transform: capitalize;
   text-align: center;
 }
 nav {
@@ -80,7 +80,6 @@ body {
   background-color: rgb(255, 255, 255);
   left: 0;
   z-index: 1;
-  border-top: 1px solid var(--border-color);
 }
 .inputs-style {
   border: 1.5px solid var(--border-color);
@@ -130,6 +129,10 @@ nav {
   border-right: none;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
+}
+.search input:focus {
+  border-color: var(--primari-color);
+  box-shadow: 0px 2px 3px var(--primari-color);
 }
 .search button {
   background-color: transparent;
@@ -317,6 +320,29 @@ nav {
 #filter-search {
   display: none;
 }
+.user-navigation {
+  display: none;
+  position: absolute;
+  top: 70px;
+  height: 200px;
+  border: 1px solid var(--border-color);
+  z-index: 2 !important;
+  background-color: white;
+  box-shadow: 0px 2px 3px gray;
+  text-align: start;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.user-navigation p {
+  font-size: 15px;
+  cursor: pointer;
+  list-style-type: none;
+}
+.user-navigation ul li {
+  margin: 0;
+  padding: 0;
+}
 .side-buttons {
   display: flex;
   justify-content: center;
@@ -327,8 +353,14 @@ nav {
   box-shadow: 0px 0px 2px var(--primari-color);
 }
 .sign-out-button {
-  display: none;
+  display: block;
+  color: red;
+  border: none;
+  padding: 0;
+  font-size: 13px;
+  background-color: transparent;
 }
+
 /* Mobile view // break-line */
 @media screen and (max-width: 685px) {
   /* #filter-search {
@@ -348,15 +380,7 @@ nav {
     border-radius: 5px;
     font-size: 14px;
   } */
-  .sign-out-button {
-    display: block;
-    color: red;
-    border: none;
-    padding: 0;
-    font-size: 13px;
-    margin: 5px 0px;
-    background-color: transparent;
-  }
+
   .location-image {
     display: none;
   }
@@ -364,6 +388,7 @@ nav {
     top: 0;
     z-index: 1;
   }
+
   .properties {
     display: flex;
     justify-content: center;
@@ -436,13 +461,13 @@ nav {
   }
   .home-navigation-list {
     position: fixed;
-    top: 64px;
-    left: 0;
+    top: 80px;
     width: 100%;
     padding: 30px 0px;
     align-items: center;
     justify-content: center;
     background-color: rgb(255, 255, 255);
+    z-index: -5;
   }
   .side-buttons {
     margin: 0;
@@ -453,6 +478,7 @@ nav {
     justify-content: center;
     align-items: center;
     padding: 0px 0px;
+    position: relative;
   }
 
   .user-profile-image {
@@ -523,15 +549,15 @@ nav {
   }
   .defaultEmpty {
     width: 100%;
-    margin-top: 80px;
+    margin: 120px 0px 0px 10px;
   }
   .defaultEmpty img {
-    width: 85%;
+    width: 100%;
   }
   .selected-type {
     background-color: white;
     border: 1.5px solid var(--border-color);
-    padding: 7px 14px;
+    padding: 8px 14px;
     border-radius: 4px;
     font-size: 12px;
     font-weight: 600;
