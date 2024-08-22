@@ -117,7 +117,7 @@ nav {
   margin-left: 12px;
   justify-content: center;
   align-items: center;
-  margin-top: 16px;
+  margin-top: 40px !important;
 }
 
 #search-now {
@@ -322,7 +322,7 @@ nav {
   width: 100%;
   z-index: 2;
   padding: 10px 0px;
-  margin: 0;
+  margin: 0 !important;
   background-color: white;
   border-bottom: 1.5px solid var(--border-color);
 }
@@ -366,7 +366,7 @@ nav {
     display: flex;
     position: absolute;
     top: 40px;
-    right: 15px;
+    right: 20px;
     font-size: 1.5em;
     padding: 0;
     margin: 0;
@@ -419,12 +419,21 @@ nav {
     padding: 10px 0px;
     background-color: var(--border-color);
   }
+  .logo {
+    margin: 0px 10px !important;
+    padding: 0;
+  }
   .logo h1 {
+    color: white;
     font-size: 1.8em !important;
+    text-align: center;
+    margin: 0;
   }
   .logo span {
     font-size: 0.4em !important;
     text-align: center;
+    color: white !important;
+    padding: 0 !important;
   }
 
   .sticky {
@@ -495,14 +504,15 @@ nav {
     height: 100%;
   }
   .search {
-    width: 80%;
+    width: 70%;
   }
   #search-now {
-    padding: 10px;
+    padding: 10px 40px 10px 10px;
   }
 
   #search-btn {
     padding: 10px 0px;
+    margin-right: 5px;
   }
   #rightbutton,
   #leftbutton {
