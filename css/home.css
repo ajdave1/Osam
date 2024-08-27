@@ -168,8 +168,7 @@ nav {
   background-color: var(--border-color);
 } */
 .properties-at-location {
-  max-width: 55%;
-  min-width: 300px;
+  width: 55%;
   display: flex;
   border-radius: 5px;
   flex-wrap: wrap;
@@ -180,6 +179,7 @@ nav {
   position: relative;
   float: right;
 }
+
 .property-card {
   border-radius: 5px;
   max-width: 45%;
@@ -188,7 +188,6 @@ nav {
   align-items: center;
   border: 1px solid var(--border-color);
   box-shadow: 2px 4px 10px var(--border-color);
-  height: 410px;
   padding-bottom: 20px;
 }
 
@@ -282,9 +281,9 @@ nav {
   padding: 10px 0px;
   text-decoration: none;
   font-weight: 600;
+  font-size: 20px;
 }
-.callus span {
-  font-size: 14px;
+.callus i {
   text-decoration: underline;
 }
 .callus i,

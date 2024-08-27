@@ -19,6 +19,7 @@ scrollLeft.addEventListener("click", () => {
 scrollRight.addEventListener("click", () => {
   container.scrollLeft += 280;
 });
+
 viewmobilenav(navigation, opennav, closenav);
 const navBar = document.querySelector("nav");
 const search_bar = document.querySelector(".search-container");
@@ -28,4 +29,12 @@ window.addEventListener("scroll", () => {
   } else {
     search_bar.classList.remove("sticky");
   }
+});
+
+const uls = document.querySelectorAll("#ul-li-a");
+uls.forEach(el => {
+  el.addEventListener("click", () => {
+    navigation.style = "display:";
+    mavigation.classList.add("hide-nav");
+  });
 });

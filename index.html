@@ -16,6 +16,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Pacifico&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
 <body>
@@ -30,10 +31,10 @@
 
             </div>
             <ul>
-                <li><a href="#">Home </a> </li>
-                <li><a href="#"> Rent</a></li>
-                <li><a href="#"> Sell</a></li>
-                <li><a href="#"> Speak with us </a></li>
+                <li><a href="" id="ul-li-a">Home </a> </li>
+                <li><a href="#locations" id="ul-li-a"> Rent</a></li>
+                <li><a href="#" id="ul-li-a"> Sell</a></li>
+                <li><a href="#" id="ul-li-a"> Speak with us </a></li>
 
             </ul>
             <div class="side-buttons">
@@ -54,7 +55,8 @@
         <div class="hero-second-container">
             <div class="search-container">
                 <div class="search">
-                    <input type="search" placeholder="Search locations i.e Ibadan" id="search-now">
+                    <input type="search" onkeydown="document.location='./default.html'"
+                        placeholder=" Search locations i.e Ibadan" id="search-now">
                     <button class="bx bx-search" id="search-btn"></button>
                 </div>
             </div>
@@ -71,7 +73,7 @@
 
 
 
-    <div class="outer-container">
+    <div class="outer-container" id="locations">
         <h1>Popular locations</h1>
         <div class="scrol">
             <button id="leftbutton">
@@ -82,26 +84,26 @@
 
                 <div class="card card1">
 
-                    <a href=""> Ontario Canada</a>
+                    <a href="default.html"> Ontario Canada</a>
                 </div>
                 <div class="card card2">
 
-                    <a href="">
+                    <a href="default.html">
                         Abuja</a>
                 </div>
                 <div class="card card3">
 
-                    <a href="">
+                    <a href="default.html">
                         Lagos </a>
                 </div>
                 <div class="card card4">
 
-                    <a href="">
+                    <a href="default.html">
                         Ibadan </a>
                 </div>
                 <div class="card card5">
 
-                    <a href="">
+                    <a href="default.html">
                         England</a>
                 </div>
             </main>
@@ -161,13 +163,79 @@
         <div class="ads-image">
         </div>
     </div>
-    <footer class="footer">
+    <div class="notification hide-item">
+        <p> notification</p>
+    </div>
+    <footer class="footer" data-aos="fade-up" data-aos-anchor-placement="center-bottom">
+        <div class="logo-container" data-aos="fade-up">
+            <div class="logo">
+                <h1>O'SAM</h1>
+                <span>CONSULTS & SERVICES LTD.</span>
+            </div>
+        </div>
+
+        <div class="socials" data-aos="fade-up" data-aos-duration="2000">
+            <h2>Our socials</h2>
+            <div>
+                <p>
+                    <span class="bx bxl-instagram medias"></span>
+                    <a href="https://instagram/osam_consults">@Osam_consults</a>
+                </p>
+                <p>
+                    <span class="bx bxl-facebook medias"></span>
+                    <a href="https://instagram/osam_consults">@Osam consults</a>
+                </p>
+                <p>
+                    <span class="bx bxl-twitter medias"></span>
+                    <a>Osam Consult 1</a>
+                </p>
+                <p>
+                    <span class="bx bxl-youtube medias"></span>
+                    <a href="https://instagram/osam_consults">@Osam consults</a>
+                </p>
 
 
+            </div>
+        </div>
+        <div class="services" data-aos="fade-up" data-aos-duration="1000">
+            <h2>Services</h2>
+            <ul>
+                <li><a href="">Land surveyors</a></li>
+                <li><a href="">Real Estate Agent</a></li>
+                <li><a href="">Architecural design
+                    </a></li>
+                <li><a href="">Estate surveyors and valuers
+
+                    </a></li>
+
+
+            </ul>
+
+        </div>
+        <div class="subscribe" data-aos="fade-up" data-aos-duration="1000">
+            <h2>Subscribe to our newsletter</h2>
+            <div>
+                <input type="email " placeholder="email">
+                <button>subscribe</button>
+            </div>
+            <p>get the latest news about real estate , locations , offers and many more </p>
+
+        </div>
+        <div class="footer-last" data-aos="fade-up" data-aos-duration="1000">
+            <p>&copy; 2024 Osam consults. Properties Limited RC:1460722 – All rights reserved.RC:7206227 </p><a>Terms
+                and conditions</a>
+        </div>
 
     </footer>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 600,
+            once: true
+        });
+    </script>
+
     <script src="./scripts/general.js"></script>
     <script src="./scripts/dex.js"></script>
-
 
 </html>

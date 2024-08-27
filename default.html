@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Osam consults</title>
+    <link rel="stylesheet" href="./css/general.css">
+    <link rel="stylesheet" href="./css/defualt-page.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Pacifico&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <nav>
+        <div class="logo">
+            <h1>O'SAM</h1>
+            <span>CONSULTS & SERVICES LTD.</span>
+        </div>
+        <div class="navigation">
+            <div class="bx bx-x" id="close-nav">
+
+            </div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a onclick="showAllProperties('for rent')">Rent </a> </li>
+
+                <li><a onclick="showAllProperties('for sale')"> Buy</a></li>
+                <li><a href="#"> Sell</a></li>
+                <li><a href="#"> Help</a></li>
+            </ul>
+
+        </div>
+        <div class="side-buttons">
+            <div class="profile-details">
+
+                <div class="user-profile-image" onclick="document.location='login.html'">
+                    <h4>Sign in </h4>
+                </div>
+            </div>
+        </div>
+        <div class=" bx bx-menu open-mobile-nav" id="open-nav">
+        </div>
+
+    </nav>
+
+
+
+
+
+    <main class="home-container">
+        <div class="home-nav">
+            <div class="search">
+                <input type="search" class="home-search-input" onkeydown="handleKey(event)">
+                <button class="bx bx-search"></button>
+            </div>
+            <div id="filter-search"><span class="bx bx-filter"></span> <span>Filter</span></div>
+            <div class="home-navigation-list">
+
+                <div class="select-type">
+                    <div class="selected-type" id="view-type-dd">
+                        <span id="selected-value" class="type-value">For rent</span>
+                        <span class="down-up"><i class='bx bx-chevron-down'></i></span>
+                    </div>
+                    <ul class="type-drop-down hide-item">
+                        <li><input type="radio" name="selected" value="rent"><span>For Rent</span></li>
+                        <li><input type="radio" name="selected" value="sale"><span>For Sale</span></li>
+                        <button id="get-property-type">Apply</button>
+                    </ul>
+                </div>
+                <div class="select-type">
+                    <div class="selected-type" id="view-price-dd">
+                        <span id="selected-value" class="price-value">Price</span>
+                        <span class="down-up"><i class='bx bx-chevron-down'></i></span>
+                    </div>
+                    <ul class="price-cont hide-item">
+                        <h2>Price </h2>
+                        <input type="number" placeholder=" Min - Price" id="min-p">
+                        <input type="number" placeholder="Enter Max - Price" id="max-p">
+                        <button id="get-price">Apply</button>
+                    </ul>
+                </div>
+                <button class="save-search">Save & Search</button>
+            </div>
+
+        </div>
+        <section class="main-section">
+            <div class="properties">
+                <div class="defaultEmpty">
+                    <div class="defaultEmpty-image">
+                        <img src="./assets/illustration-empty-state-fullscreen.png">
+                    </div>
+                    <div class="defaultEmpty-text">
+                        <div>
+                            <h1>Discover your dream home</h1>
+                            <p>Search any location</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="contact-support">
+            <a href="tel:+2347031679246"><span class="bx bx-phone-call bx-tada"></span></a>
+        </div>
+    </main>
+    <div class="notification hide-notification">
+        <p class="notification-message"> notification</p>
+    </div>
+    <script src="./scripts/general.js"></script>
+    <script src="./scripts/propeties.js"></script>
+    <script src="./scripts/home.js" type="module"></script>
+
+</body>
+
+</html>
