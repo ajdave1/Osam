@@ -3,7 +3,7 @@ const homenav = document.querySelector(".home-nav");
 const homeNav = document.querySelector(".home-navigation-list");
 const usernav = document.querySelector(".user-navigation");
 const toggleUserNav = document.querySelector(".user-profile-image");
-
+const homeanchor = document.querySelectorAll("#home-anchor");
 const propertiesContainer = properties;
 savesearch.addEventListener("click", () => {
   const propDetails = propertyDetails();
@@ -40,6 +40,9 @@ viewmobilenav(navigation, opennav, closenav);
 opennav.addEventListener("click", () => (homenav.style = "display:none"));
 closenav.addEventListener("click", () => (homenav.style = "display:flex"));
 toggleUserNav.addEventListener("click", () => {
+  UserNavfunction();
+});
+function UserNavfunction() {
   if (usernav.classList.contains("hide-item")) {
     usernav.classList.remove("hide-item");
     usernav.classList.add("view-drop-down");
@@ -51,4 +54,15 @@ toggleUserNav.addEventListener("click", () => {
     homeNav.classList.remove("hide-item");
     homeNav.classList.add("view-home-nav");
   }
+}
+properties.addEventListener("click", () => {
+  usernav.classList.add("hide-item");
+  usernav.classList.remove("view-drop-down");
+  homeNav.classList.remove("hide-item");
+  homeNav.classList.add("view-home-nav");
+});
+homeanchor.forEach(anchor => {
+  anchor.addEventListener("click", () => {
+    navigation.style = "display:none";
+  });
 });

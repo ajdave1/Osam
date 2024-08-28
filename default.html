@@ -34,7 +34,7 @@
                 <li><a onclick="showAllProperties('for rent')">Rent </a> </li>
 
                 <li><a onclick="showAllProperties('for sale')"> Buy</a></li>
-                <li><a href="#"> Sell</a></li>
+                <li><a href="form.html">Sell</a></li>
                 <li><a href="#"> Help</a></li>
             </ul>
 
@@ -59,8 +59,8 @@
     <main class="home-container">
         <div class="home-nav">
             <div class="search">
-                <input type="search" class="home-search-input" onkeydown="handleKey(event)">
-                <button class="bx bx-search"></button>
+                <input type="search" class="home-search-input" onkeydown="handleKey(event)" autofocus>
+                <button class="bx bx-search" id="search-button"></button>
             </div>
             <div id="filter-search"><span class="bx bx-filter"></span> <span>Filter</span></div>
             <div class="home-navigation-list">
@@ -114,9 +114,11 @@
     <div class="notification hide-notification">
         <p class="notification-message"> notification</p>
     </div>
+
     <script src="./scripts/general.js"></script>
     <script src="./scripts/propeties.js"></script>
-    <script src="./scripts/home.js" type="module"></script>
+    <script src="./scripts/home.js"></script>
+    <script src="./scripts/default.js"></script>
 
 </body>
 

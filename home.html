@@ -30,11 +30,11 @@
 
             </div>
             <ul>
-                <li><a onclick="showAllProperties('for rent')">Rent </a> </li>
+                <li><a onclick="showAllProperties('for rent')" id="home-anchor">Rent </a> </li>
 
-                <li><a onclick="showAllProperties('for sale')"> Buy</a></li>
-                <li><a href="#"> Sell</a></li>
-                <li><a href="#"> Help</a></li>
+                <li><a onclick="showAllProperties('for sale')" id="home-anchor"> Buy</a></li>
+                <li><a href="form.html" id="home-anchor"> Sell</a></li>
+                <li><a href="home.html" id="home-anchor"> Help</a></li>
             </ul>
 
         </div>
@@ -69,7 +69,7 @@
         <div class="home-nav">
             <div class="search">
                 <input type="search" class="home-search-input" autofocus onkeydown="handleKey(event)">
-                <button class="bx bx-search"></button>
+                <button class="bx bx-search" id="search-button"></button>
             </div>
             <div id="filter-search"><span class="bx bx-filter"></span> <span>Filter</span></div>
             <div class="home-navigation-list">

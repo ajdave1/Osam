@@ -22,7 +22,7 @@
 <body>
     <nav>
 
-        <div class="logo">
+        <div class="logo " onclick="document.location='./'">
             <h1>O'SAM</h1>
             <span>CONSULTS & SERVICES LTD.</span>
         </div>
@@ -32,9 +32,11 @@
             </div>
             <ul>
                 <li><a href="" id="ul-li-a">Home </a> </li>
-                <li><a href="#locations" id="ul-li-a"> Rent</a></li>
-                <li><a href="#" id="ul-li-a"> Sell</a></li>
-                <li><a href="#" id="ul-li-a"> Speak with us </a></li>
+                <li>
+                    <a href="default.html" id="ul-li-a" class="i-properties">Rent</a>
+                </li>
+                <li><a href="form.html" id="ul-li-a"> Sell</a></li>
+                <li><a href="tel:+2347031679246" id="ul-li-a"> Speak with us </a></li>
 
             </ul>
             <div class="side-buttons">
@@ -55,8 +57,8 @@
         <div class="hero-second-container">
             <div class="search-container">
                 <div class="search">
-                    <input type="search" onkeydown="document.location='./default.html'"
-                        placeholder=" Search locations i.e Ibadan" id="search-now">
+                    <input type="search" onkeydown="redirect()" placeholder=" Search locations i.e Ibadan"
+                        id="search-now">
                     <button class="bx bx-search" id="search-btn"></button>
                 </div>
             </div>
@@ -84,27 +86,23 @@
 
                 <div class="card card1">
 
-                    <a href="default.html"> Ontario Canada</a>
+                    <a href="default.html" id="link-to-def"> Ontario Canada</a>
                 </div>
                 <div class="card card2">
 
-                    <a href="default.html">
-                        Abuja</a>
+                    <a href="default.html" id="link-to-def">Abuja</a>
                 </div>
                 <div class="card card3">
 
-                    <a href="default.html">
-                        Lagos </a>
+                    <a href="default.html" id="link-to-def">Lagos</a>
                 </div>
                 <div class="card card4">
 
-                    <a href="default.html">
-                        Ibadan </a>
+                    <a href="default.html" id="link-to-def">Ibadan </a>
                 </div>
                 <div class="card card5">
 
-                    <a href="default.html">
-                        England</a>
+                    <a href="default.html" id="link-to-def"> England</a>
                 </div>
             </main>
 
@@ -115,10 +113,10 @@
     </div>
 
     <div class="about-cont">
-        <div class="about-image">
+        <div class="about-image" data-aos="zoom-in" data-aos-duration="1000">
             <img src="./assets/whyus.jpg">
         </div>
-        <div class="about-text">
+        <div class="about-text" data-aos="fade-left" data-aos-duration="1500">
 
             <ul>
                 <h1>Why Us? </h1>

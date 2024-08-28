@@ -18,6 +18,7 @@ const closenav = document.getElementById("close-nav");
 const navigation = document.querySelector(".navigation");
 const notification = document.querySelector(".notification");
 const note = document.querySelector(".notification-message");
+const searchButton = document.getElementById("search-button");
 
 let defaultMinprice = 200000;
 let defaultMaxprice = 10000000;
@@ -50,9 +51,12 @@ function toggleDropdowns(mes) {
     price_drop_down.classList.remove("view-item");
   }
 }
+properties.addEventListener("click", () => {
+  toggleDropdowns("both");
+});
 viewTypedrop.addEventListener("click", () => toggleDropdowns("Type"));
 viewPricedrop.addEventListener("click", () => toggleDropdowns("Price"));
-//break-line
+// TODO;
 getPrice.addEventListener("click", () => {
   if (minPrice.value < 200000) {
     window.alert("Please enter any price about 200,000");
@@ -66,7 +70,7 @@ getPrice.addEventListener("click", () => {
   viewPrice.innerHTML = "Saved";
   toggleDropdowns("both");
 });
-
+//break-line FUNCTIONs
 function propertyDetails() {
   let locate = searchInput.value;
   locate.toLowerCase();
@@ -83,16 +87,23 @@ function propertyDetails() {
 
 function handleKey(event) {
   if (event.key === "Enter") {
-    if (searchInput.value.trim() === "") {
-      return;
-    }
-    const propDetails = propertyDetails();
-    const location = propDetails.locate.toLowerCase().trim();
-    const head = "There is no property available at";
-    const mess = "Contact our suppport for additional information";
-    emptySearch(location, head, mess);
-    searchproperty();
+    searchFunction();
   }
+}
+searchButton.addEventListener("click", () => {
+  console.log("clicked");
+  searchFunction();
+});
+function searchFunction() {
+  if (searchInput.value.trim() === "") {
+    return;
+  }
+  const propDetails = propertyDetails();
+  const location = propDetails.locate.toLowerCase().trim();
+  const head = "There is no property available at";
+  const mess = "Contact our suppport for additional information";
+  emptySearch(location, head, mess);
+  searchproperty();
 }
 
 function searchproperty() {
@@ -109,7 +120,6 @@ function searchproperty() {
   });
 }
 
-//break-line
 function rendersearchcont(location) {
   let container = document.querySelector(".properties");
   container.innerHTML = `

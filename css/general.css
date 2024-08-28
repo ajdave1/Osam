@@ -8,7 +8,9 @@ body {
   --logo-color: #116cad;
   --border-color: rgb(206, 206, 206);
   color: rgb(54, 53, 53);
-
+}
+html {
+  scroll-behavior: smooth;
 }
 
 nav {
