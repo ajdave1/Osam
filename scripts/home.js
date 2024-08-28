@@ -64,5 +64,6 @@ properties.addEventListener("click", () => {
 homeanchor.forEach(anchor => {
   anchor.addEventListener("click", () => {
     navigation.style = "display:none";
+    homenav.style = "display:flex";
   });
 });

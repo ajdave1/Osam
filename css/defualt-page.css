@@ -440,7 +440,7 @@ nav {
   #close-nav {
     display: flex;
     position: absolute;
-    top: 30px;
+    top: 43px;
     right: 15px;
     font-size: 1.5em;
     padding: 0;
@@ -455,8 +455,6 @@ nav {
 
   #open-nav {
     right: 45px;
-    top: 32px;
-
     color: rgb(0, 0, 0);
   }
   #close-nav:hover {
@@ -524,7 +522,7 @@ nav {
     margin-left: 12px;
     justify-content: center;
     align-items: center;
-    margin-top: 16px;
+    margin-top: 10px;
   }
 
   .search input {
