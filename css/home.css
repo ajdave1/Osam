@@ -351,10 +351,7 @@ nav {
   justify-content: center;
   align-items: center;
 }
-.search input[type="search"]:focus {
-  border: 1px solid red !important;
-  box-shadow: 0px 0px 2px var(--primari-color);
-}
+
 .sign-out-button {
   display: block;
   color: red;
