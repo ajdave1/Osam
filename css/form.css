@@ -30,6 +30,7 @@ select {
   border: 1.5px solid gray;
   padding: 8px 8px;
   border-radius: 5px;
+  background-color: white;
 }
 .seller-form div {
   width: 100%;
