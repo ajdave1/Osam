@@ -25,12 +25,15 @@
                 </h1>
                 <label for="email"><b class="bx bx-envelope"></b>Enter your email</label>
                 <input type="email" class="inputs" name="email">
-                <label for="password"><b class="bx bx-lock-alt"></b>password </label>
+                <label for="password"><b class="bx bx-lock-alt"></b>Password </label>
                 <input type="password" class="inputs" name="password">
                 <button>Log in</button>
 
             </div>
-            <div>don't have an account? <span class="link" onclick="toggle('create')">Register</span></div>
+
+            <div>don't have an account? <span class="link to-create">Register</span></div> <a
+                class="admin-button">Admin</a>
+
         </div>
         <div class="login-sign hide-item" id="create">
 
@@ -51,10 +54,25 @@
                 <input type="password" name="password" class="inputs">
             </div>
             <button>Register</button>
+
             <div>have an account?
                 <span class="link" onclick="toggle('login')">Log in</span>
-            </div>
+            </div> <a class="admin-button">Admin</a>
+        </div>
+        <div class="login-sign hide-item " id="admin">
 
+            <div class="container">
+                <h1>
+                    ADMIN
+                </h1>
+                <label for="email"><b class="bx bx-envelope"></b>Email</label>
+                <input type="email" class="inputs" name="email">
+                <label for="password"><b class="bx bx-lock-alt"></b>Password </label>
+                <input type="password" class="inputs" name="password">
+                <button>Sign in</button>
+
+            </div>
+            <div><span class="link to-login">users' login</span></div>
 
         </div>
         <div class="overlay">
@@ -62,7 +80,7 @@
         </div>
 
     </div>
-    <div class="bx bx-left-arrow-alt back-arr" onclick="document.location='./index.html'"></div>
+    <div class="bx bx-left-arrow-alt back-arr" onclick="document.location='index.html'"></div>
 
     <script src="./scripts/login.js"></script>
 </body>

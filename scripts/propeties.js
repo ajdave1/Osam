@@ -28,7 +28,7 @@ const properteas = [
     properties: [
       {
         uid: "1",
-        propertyPrice: 10000000,
+        propertyPrice: 1000000,
         propertyImage: "../properties/house-placeholder.jpg",
         type: "for rent",
         location: "Lekki-Phase 1 ",
@@ -36,7 +36,7 @@ const properteas = [
       },
       {
         uid: "2",
-        propertyPrice: 100000000,
+        propertyPrice: 1000000,
         propertyImage: "../properties/house-placeholder.jpg",
         type: "for sale",
         location: "Banana Island",
@@ -50,7 +50,7 @@ const properteas = [
     properties: [
       {
         uid: "1",
-        propertyPrice: 40000000,
+        propertyPrice: 1000000,
         propertyImage: "../properties/house-placeholder.jpg",
         type: "for rent",
         location: "Transcorp",
@@ -58,7 +58,7 @@ const properteas = [
       },
       {
         uid: "2",
-        propertyPrice: 20000000,
+        propertyPrice: 1000000,
         propertyImage: "../properties/house-placeholder.jpg",
         type: "for sale",
         location: "FCT ",

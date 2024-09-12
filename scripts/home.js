@@ -22,16 +22,16 @@ savesearch.addEventListener("click", () => {
           property.propertyPrice < maxprice &&
           property.type === type
         ) {
+          console.log(property.type);
+          console.log(type);
+          console.log(property);
           rendersearch(property);
           toggleDropdowns("both");
           return;
         }
-        console.log(property.propertyPrice);
-        console.log(minprice);
-        console.log(maxprice);
-        console.log(type);
-        console.log(property.type);
-        console.log(property.propertyName);
+        notify(" No property found ");
+        document.querySelector(".properties-at-location").innerHTML = `
+          <h2 style="display: flex; justify-content:center; align-items:center;"> No property available </h2>`;
       });
     }
   });
@@ -63,6 +63,9 @@ properties.addEventListener("click", () => {
 });
 homeanchor.forEach(anchor => {
   anchor.addEventListener("click", () => {
+    if (window.outerWidth > 650) {
+      return;
+    }
     navigation.style = "display:none";
     homenav.style = "display:flex";
   });

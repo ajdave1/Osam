@@ -20,18 +20,76 @@ nav {
   grid-template-columns: 1fr 2fr !important;
 }
 .locations {
-  overflow-x: auto;
+  overflow-y: auto;
+  overflow-x: scroll;
   display: flex;
+
+  gap: 40px;
   width: 100%;
-  gap: 50px;
   scroll-behavior: smooth;
-  resize: none;
   white-space: none;
   padding: 0;
+}
+.card {
+  color: white;
+  flex-shrink: 0;
+  position: relative;
+  width: 300px;
+  height: 200px;
+}
+.search-temp {
+  position: absolute;
+  width: 50%;
+  height: 400px;
+  background-color: white;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  top: 60px;
+  overflow-y: auto;
+}
+.search-temp ::-webkit-scrollbar {
+  background-color: white;
+}
+.search-temp ul {
+  list-style-type: none;
+  padding: 0;
+}
+.search-temp ul li {
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 5px;
+  margin: 5px 20px;
+  margin-bottom: 30px;
+}
+.search-temp ul li a {
+  color: black;
+  margin-bottom: 10px;
+  text-decoration: none;
+}
+.card-image {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: rgb(5, 69, 113);
+}
+.card-image img {
+  width: 100%;
+  height: 100%;
+}
+.card-name {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+
+  /* background-color: red; */
+  align-items: center;
+  justify-content: center;
+  color: whitesmoke;
 }
 .locations::-webkit-scrollbar {
   display: none;
 }
+
 .scrol {
   display: flex;
   align-items: center;
@@ -61,34 +119,8 @@ nav {
   font-weight: bold;
   margin-bottom: 50px;
 }
-.card {
-  background-position: center;
-  background-size: cover;
-  min-width: 300px;
-  min-width: 30%;
-  height: 250px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  border-radius: 5px;
-}
-.card1 {
-  background-image: url(../assets/Ontario\ CA.jpg);
-}
-.card2 {
-  background-image: url(../assets/Abuja2.jpeg);
-}
-.card3 {
-  background-image: url(../assets/Lagos.jpeg);
-}
-.card4 {
-  background-image: url(../Ibadan.jpg);
-}
-.card5 {
-  background-image: url(../assets/Birmhingam\ england.jpeg);
-}
-.card a {
+
+.card-name a {
   font-size: 25px;
   font-weight: 600;
   color: white;
@@ -112,6 +144,7 @@ nav {
   cursor: pointer;
 }
 .search-container {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -131,37 +164,6 @@ nav {
   background-color: white;
   padding: 15px 40px;
 }
-
-/* #search-btn {
-  cursor: pointer;
-  border: 1.5px solid var(--border-color);
-  color: rgb(41, 40, 40);
-  background-color: white;
-  padding: 19px;
-  font-size: 17px;
-  border-left: none;
-  border-top-right-radius: var(--border-radius);
-  border-bottom-right-radius: var(--border-radius);
-}
-
-#search-now {
-  border: 1.5px solid var(--border-color);
-  border-right: none;
-  background-color: white;
-  padding: 20px;
-  width: 60%;
-  border-top-left-radius: var(--border-radius);
-  border-bottom-left-radius: var(--border-radius);
-} */
-/* .search-container {
-  margin: 0% auto;
-  width: 100%;
-  padding: 10px 5px;
-  margin-bottom: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-} */
 
 .hero-section {
   height: 80vh;
@@ -665,13 +667,21 @@ nav {
     margin-top: 20px;
   }
   .locations {
-    gap: 10px;
+    gap: 5px;
     width: 100%;
     padding: 0;
     margin: 0;
+    justify-content: start;
+    align-items: start;
   }
   .card {
-    min-width: 100%;
+    width: 100%;
+  }
+  .card-image {
+    width: 100%;
+  }
+  .card-name {
+    width: 100%;
   }
 
   #rightbutton,

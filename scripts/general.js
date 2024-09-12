@@ -24,6 +24,7 @@ let defaultMinprice = 200000;
 let defaultMaxprice = 10000000;
 
 //SPOT
+
 getType.addEventListener("click", () => {
   const selectedradio = Array.prototype.find.call(option, selected => {
     return selected.checked;
@@ -59,10 +60,7 @@ viewPricedrop.addEventListener("click", () => toggleDropdowns("Price"));
 // TODO;
 getPrice.addEventListener("click", () => {
   if (minPrice.value < 200000) {
-    window.alert("Please enter any price about 200,000");
-    return;
-  } else if (minPrice.value > maxPrice.value) {
-    window.alert("Minimum price can't be greater than Maximum price");
+    window.alert("Please enter any price above 200,000");
     return;
   }
   defaultMinprice = minPrice.value;
@@ -157,23 +155,24 @@ function rendersearch(prop) {
   
   `;
 }
+
 function emptySearch(location, head, message) {
   let container = document.querySelector(".properties");
   container.innerHTML = `
-                <div class="defaultEmpty">
-                    <div class="defaultEmpty-image">
-                        <img src="./assets/illustration-empty-state-fullscreen.png">
-                    </div>
+      <div class="defaultEmpty">
+          <div class="defaultEmpty-image">
+              <img src="./assets/illustration-empty-state-fullscreen.png">
+          </div>
 
-                    <div class="defaultEmpty-text">
-                        <div>
-                            <h1>OOPS</h1>
-                            <h2><i class='bx bxs-key bx-spin'></i> ${head} ${location}</h2>
-                            <p>${message}</p>
-                        </div>
-                    </div>
-                </div>
-  `;
+          <div class="defaultEmpty-text">
+              <div>
+                  <h1>OOPS</h1>
+                  <h2><i class='bx bxs-key bx-spin'></i> ${head} ${location}</h2>
+                  <p>${message}</p>
+              </div>
+          </div>
+      </div>
+`;
 }
 
 function viewmobilenav(nav, btnO, btnC) {
@@ -242,4 +241,5 @@ function notify(message) {
     notification.classList.remove("view-notification");
   }, 3000);
 }
+
 // notify("This is notification");

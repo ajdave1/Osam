@@ -24,6 +24,7 @@ body {
   position: relative;
 }
 .login-sign {
+  position: relative;
   z-index: 1;
   background-color: aliceblue;
   gap: 10px;
@@ -78,6 +79,15 @@ label b {
   color: var(--primari-color);
   padding-right: 5px;
   padding-bottom: 5px;
+}
+.admin-button {
+  width: 10% !important;
+  color: #036a9a;
+  padding: 0px 6px;
+  cursor: pointer;
+  font-size: 15px;
+  border-left: 1px solid black;
+  text-decoration: underline;
 }
 .back-arr {
   display: flex;

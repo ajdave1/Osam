@@ -14,10 +14,48 @@ adsX.addEventListener("click", () => {
 });
 
 scrollLeft.addEventListener("click", () => {
-  container.scrollLeft -= 280;
+  container.scrollLeft -= 279;
 });
 scrollRight.addEventListener("click", () => {
-  container.scrollLeft += 280;
+  container.scrollLeft += 279;
+});
+const popularLocations = [
+  {
+    image: "./assets/Lagos.jpeg",
+    name: "LAGOS",
+  },
+  {
+    image: "./assets/Abuja.jpeg",
+    name: "ABUJA",
+  },
+  {
+    image: "./assets/ibadan.png",
+    name: "Ibadan",
+  },
+  {
+    image: "./assets/Ontario CA.jpg",
+    name: "Ontario Canada",
+  },
+  {
+    image: "./assets/Lagos.jpeg",
+    name: "LAGOS",
+  },
+];
+
+popularLocations.forEach(location => {
+  container.innerHTML += `
+
+<div class="card">
+                    <div class="card-image">
+                        <img src="${location.image}" alt="${location.name} image">
+
+                    </div>
+                    <div class="card-name">
+                        <a href="default.html" id="link-to-def">${location.name}</a>
+                    </div>
+                </div>
+
+`;
 });
 
 viewmobilenav(navigation, opennav, closenav);
@@ -55,10 +93,26 @@ initiateBtn.addEventListener("click", () => {
   localStorage.clear();
   localStorage.setItem("toInitial", data);
 });
-function redirect() {
-  setTimeout(() => {
-    // document.location = "home.html";
-    localStorage.setItem("search-input", JSON.stringify(this.value));
-    console.log(this.value);
-  }, 1000);
-}
+const input = document.querySelector("#search-now");
+const searchTemp = document.querySelector(".search-temp");
+const searchUL = document.querySelector(".search-temp ul");
+input.addEventListener("keydown", () => {
+  searchTemp.classList.add("view-item");
+  searchTemp.classList.remove("hide-item");
+  const searching = input.value.toLowerCase();
+  let locals = [];
+  properteas.forEach(prop => {
+    const location = prop.location;
+    const found = location.includes(searching);
+
+    if (found) {
+      locals.push(location);
+    }
+  });
+  locals.forEach(local => {
+    searchUL.innerHTML = `
+        <li><a href="default.html" id="link-to-def">${local}</a></li>
+     `;
+  });
+  locals = [];
+});

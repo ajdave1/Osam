@@ -90,6 +90,7 @@ nav ul li a {
 }
 .notification {
   background-color: rgb(5, 69, 113);
+
   position: fixed;
   top: 15px;
   right: 30px;
