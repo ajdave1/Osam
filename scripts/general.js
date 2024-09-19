@@ -166,7 +166,7 @@ function searchproperty(opt) {
   p.forEach(el => {
     document.querySelector(
       ".location-image"
-    ).innerHTML = ` <img src="./property-location/${el.state}.png">`;
+    ).innerHTML = ` <img src="./property-location/${el.state.toLocaleLowerCase()}.png">`;
     rendersearch(el);
   });
 }

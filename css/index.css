@@ -293,8 +293,7 @@ nav {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
 }
-.socials {
-}
+
 .socials p {
   display: flex;
   align-items: center;
@@ -459,7 +458,7 @@ nav {
     background-color: transparent;
     z-index: 2;
   }
-  
+
   #open-nav,
   #close-nav {
     display: flex;
