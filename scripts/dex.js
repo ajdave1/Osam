@@ -3,6 +3,7 @@ const scrollRight = document.getElementById("rightbutton");
 const container = document.querySelector(".locations");
 const adsX = document.querySelector(".ads-x");
 const ads = document.querySelector(".ads");
+const input = document.querySelector("#search-now");
 
 setTimeout(() => {
   ads.classList.add("view-item");
@@ -57,7 +58,6 @@ popularLocations.forEach(location => {
 
 `;
 });
-
 viewmobilenav(navigation, opennav, closenav);
 const navBar = document.querySelector("nav");
 const search_bar = document.querySelector(".search-container");
@@ -71,48 +71,75 @@ window.addEventListener("scroll", () => {
   }
 });
 
-const uls = document.querySelectorAll("#ul-li-a");
-uls.forEach(el => {
-  el.addEventListener("click", () => {
-    navigation.style = "display:";
-    mavigation.classList.add("hide-nav");
+// const uls = document.querySelectorAll("#ul-li-a");
+// uls.forEach(el => {
+//   el.addEventListener("click", () => {
+//     navigation.style = "display:";
+//     mavigation.classList.add("hide-nav");
+//   });
+// });
+function redirect() {
+  const links = document.querySelectorAll("#link-to-def");
+  links.forEach(link => {
+    link.addEventListener("click", el => {
+      let data = JSON.stringify(link.innerHTML);
+      console.log(data);
+      localStorage.clear();
+      localStorage.setItem("location", data);
+    });
   });
-});
-const links = document.querySelectorAll("#link-to-def");
-links.forEach(link => {
-  link.addEventListener("click", el => {
-    let data = JSON.stringify(link.innerHTML);
+}
+redirect();
+
+const initiateBtn = document.querySelectorAll(".i-properties");
+initiateBtn.forEach(button => {
+  button.addEventListener("click", () => {
+    let data = button.innerHTML;
+    if (data === "Buy") {
+      data = "sale";
+    }
+    data = data.toLowerCase();
+    data = "for " + data;
     console.log(data);
     localStorage.clear();
-    localStorage.setItem("location", data);
+    localStorage.setItem("toInitial", data);
   });
 });
-const initiateBtn = document.querySelector(".i-properties");
-initiateBtn.addEventListener("click", () => {
-  let data = JSON.stringify(initiateBtn.innerHTML);
-  localStorage.clear();
-  localStorage.setItem("toInitial", data);
-});
-const input = document.querySelector("#search-now");
-const searchTemp = document.querySelector(".search-temp");
-const searchUL = document.querySelector(".search-temp ul");
-input.addEventListener("keydown", () => {
+
+input.addEventListener("keydown", event => {
   searchTemp.classList.add("view-item");
   searchTemp.classList.remove("hide-item");
   const searching = input.value.toLowerCase();
   let locals = [];
-  properteas.forEach(prop => {
-    const location = prop.location;
+  proper.forEach(prop => {
+    const location =
+      prop.location.toLocaleLowerCase().trim() +
+      " " +
+      prop.state.toLocaleLowerCase().trim();
     const found = location.includes(searching);
-
     if (found) {
       locals.push(location);
     }
   });
+
+  searchUL.innerHTML = "";
   locals.forEach(local => {
-    searchUL.innerHTML = `
-        <li><a href="default.html" id="link-to-def">${local}</a></li>
+    searchUL.innerHTML += `
+        <li><a href="default.html" id="link-to-def" >${local}</a></li>
      `;
   });
+
+  redirect();
+  if (event.key === "Enter") {
+    let data = JSON.stringify(input.value);
+    console.log(data);
+    localStorage.clear();
+    localStorage.setItem("location", data);
+    document.location = "default.html";
+  }
   locals = [];
+  setTimeout(() => {
+    searchTemp.classList.remove("view-item");
+    searchTemp.classList.add("hide-item");
+  }, 10000);
 });

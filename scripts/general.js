@@ -19,7 +19,8 @@ const navigation = document.querySelector(".navigation");
 const notification = document.querySelector(".notification");
 const note = document.querySelector(".notification-message");
 const searchButton = document.getElementById("search-button");
-
+const searchTemp = document.querySelector(".search-temp");
+const searchUL = document.querySelector(".search-temp ul");
 let defaultMinprice = 200000;
 let defaultMaxprice = 10000000;
 
@@ -54,6 +55,8 @@ function toggleDropdowns(mes) {
 }
 properties.addEventListener("click", () => {
   toggleDropdowns("both");
+  searchTemp.classList.add("hide-item");
+  searchTemp.classList.remove("view-item");
 });
 viewTypedrop.addEventListener("click", () => toggleDropdowns("Type"));
 viewPricedrop.addEventListener("click", () => toggleDropdowns("Price"));
@@ -83,15 +86,51 @@ function propertyDetails() {
   return propertyDetails;
 }
 
-function handleKey(event) {
+// function handleKey(event) {
+//   if (event.key === "Enter") {
+//     searchFunction();
+//   }
+// }
+searchInput.addEventListener("keydown", event => {
+  searchTemp.classList.add("view-item");
+  searchTemp.classList.remove("hide-item");
+  const searching = searchInput.value.toLowerCase();
+  let locals = [];
+  proper.forEach(prop => {
+    const location =
+      prop.location.toLocaleLowerCase().trim() +
+      " " +
+      prop.state.toLocaleLowerCase().trim();
+    const found = location.includes(searching);
+    if (found) {
+      locals.push(location);
+    }
+  });
+
+  searchUL.innerHTML = "";
+  locals.forEach(local => {
+    searchUL.innerHTML += `
+        <li><a id="home-search-buttons" >${local}</a></li>
+     `;
+  });
+
+  let homeSearchbtn = document.querySelectorAll("#home-search-buttons");
+  homeSearchbtn.forEach(btn => {
+    btn.addEventListener("click", () => {
+      console.log(btn.innerHTML);
+      searchproperty(btn.innerHTML);
+    });
+  });
+
   if (event.key === "Enter") {
     searchFunction();
   }
-}
+});
+
 searchButton.addEventListener("click", () => {
-  console.log("clicked");
   searchFunction();
 });
+
 function searchFunction() {
   if (searchInput.value.trim() === "") {
     return;
@@ -104,17 +143,31 @@ function searchFunction() {
   searchproperty();
 }
 
-function searchproperty() {
+function searchproperty(opt) {
   const propDetails = propertyDetails();
-  const location = propDetails.locate.toLowerCase().trim();
-  properteas.forEach(property => {
-    if (property.location === location) {
-      const LocationProperties = property.properties;
-      rendersearchcont(location);
-      LocationProperties.forEach(prop => {
-        rendersearch(prop);
-      });
+  let location = propDetails.locate.toLowerCase().trim();
+  if (opt) {
+    location = opt;
+  }
+  let p = [];
+  proper.forEach(el => {
+    const subLocation = el.location.toLocaleLowerCase().trim();
+    const state = el.state.toLocaleLowerCase().trim();
+    let test = subLocation + " " + state;
+
+    const found = test.includes(location);
+
+    if (found) {
+      rendersearchcont();
+      p.push(el);
     }
+  });
+
+  p.forEach(el => {
+    document.querySelector(
+      ".location-image"
+    ).innerHTML = ` <img src="./property-location/${el.state}.png">`;
+    rendersearch(el);
   });
 }
 
@@ -193,7 +246,6 @@ function showAllProperties(type) {
       }
     });
 
-    console.log(arr);
     document.querySelector(
       ".properties"
     ).innerHTML = ` <div class="properties-at-location">
@@ -203,7 +255,7 @@ function showAllProperties(type) {
       container.classList.add(".allproperties-style");
       container.style = "width:95%; justify-content: center; ";
       const property = prop;
-      console.log(property);
+
       container.innerHTML += `
           <div class="property-card">
                               <div class="bx bxs-heart" id="save-property"></div>

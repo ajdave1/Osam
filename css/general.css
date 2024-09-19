@@ -105,6 +105,39 @@ nav ul li a {
   transition: 0.3s;
 }
 
+.search-temp {
+  position: absolute;
+  width: 50%;
+  height: 200px;
+  background-color: white;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  top: 60px;
+  overflow-y: auto;
+}
+.search-temp ::-webkit-scrollbar {
+  background-color: white;
+}
+.search-temp ul {
+  list-style-type: none;
+  padding: 0;
+}
+.search-temp ul li {
+  width: 100%;
+
+  padding-bottom: 5px;
+  margin: 5px 20px;
+  margin-bottom: 30px;
+}
+#home-search-buttons {
+  cursor: pointer;
+}
+.search-temp ul li a {
+  width: 100%;
+  color: black;
+  margin-bottom: 10px;
+  text-decoration: none;
+}
 .notification p {
   padding: 15px 0px;
   margin: 0;
@@ -118,6 +151,13 @@ nav ul li a {
 .alert {
   background-color: yellow;
 }
+
+.view-notification {
+  top: 15px;
+}
+.hide-notification {
+  top: -100px;
+}
 @media screen and (max-width: 685px) {
   .notification {
     right: 10px;
@@ -126,10 +166,8 @@ nav ul li a {
   .notification p {
     padding: 12px 0px;
   }
-}
-.view-notification {
-  top: 15px;
-}
-.hide-notification {
-  top: -100px;
+  .search-temp {
+    width: 70%;
+    height: 200px;
+  }
 }

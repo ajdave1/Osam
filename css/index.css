@@ -37,34 +37,6 @@ nav {
   width: 300px;
   height: 200px;
 }
-.search-temp {
-  position: absolute;
-  width: 50%;
-  height: 400px;
-  background-color: white;
-  border: 1px solid var(--border-color);
-  border-radius: 5px;
-  top: 60px;
-  overflow-y: auto;
-}
-.search-temp ::-webkit-scrollbar {
-  background-color: white;
-}
-.search-temp ul {
-  list-style-type: none;
-  padding: 0;
-}
-.search-temp ul li {
-  border-bottom: 1px solid var(--border-color);
-  padding-bottom: 5px;
-  margin: 5px 20px;
-  margin-bottom: 30px;
-}
-.search-temp ul li a {
-  color: black;
-  margin-bottom: 10px;
-  text-decoration: none;
-}
 .card-image {
   width: 100%;
   height: 100%;
@@ -487,6 +459,7 @@ nav {
     background-color: transparent;
     z-index: 2;
   }
+  
   #open-nav,
   #close-nav {
     display: flex;
@@ -633,6 +606,7 @@ nav {
     width: 70%;
   }
   #search-now {
+    font-size: 16px;
     padding: 10px 40px 10px 10px;
   }
 

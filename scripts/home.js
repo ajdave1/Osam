@@ -29,9 +29,6 @@ savesearch.addEventListener("click", () => {
           toggleDropdowns("both");
           return;
         }
-        notify(" No property found ");
-        document.querySelector(".properties-at-location").innerHTML = `
-          <h2 style="display: flex; justify-content:center; align-items:center;"> No property available </h2>`;
       });
     }
   });
@@ -68,5 +65,11 @@ homeanchor.forEach(anchor => {
     }
     navigation.style = "display:none";
     homenav.style = "display:flex";
+    setInterval(() => {
+      console.log("checking");
+      if (window.outerWidth > 650) {
+        location.reload();
+      }
+    }, 1000);
   });
 });

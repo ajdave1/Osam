@@ -67,3 +67,57 @@ const properteas = [
     ],
   },
 ];
+const proper = [
+  {
+    state: "Ibadan",
+    uid: "1",
+    propertyPrice: 1000000,
+    propertyImage: "../properties/house-placeholder.jpg",
+    type: "for rent",
+    location: "Bodija-Estate ",
+    propertyName: "3 bed room fully furnished standard modern apartment",
+  },
+  {
+    state: "Ibadan",
+    uid: "2",
+    propertyPrice: 1000000,
+    propertyImage: "../properties/house-placeholder.jpg",
+    type: "for sale",
+    location: "Sango-Estate ",
+    propertyName: "4 bed room fully furnished standard modern apartment",
+  },
+
+  {
+    state: "Lagos",
+    propertyPrice: 1000000,
+    propertyImage: "../properties/house-placeholder.jpg",
+    type: "for rent",
+    location: "Lekki-Phase 1 ",
+    propertyName: "5 bed room fully furnished standard modern apartment",
+  },
+  {
+    state: "Lagos",
+    propertyPrice: 1000000,
+    propertyImage: "../properties/house-placeholder.jpg",
+    type: "for sale",
+    location: "Banana Island",
+    propertyName: "4 bed room fully furnished standard modern apartment",
+  },
+
+  {
+    state: "Abuja",
+    propertyPrice: 1000000,
+    propertyImage: "../properties/house-placeholder.jpg",
+    type: "for rent",
+    location: "Transcorp",
+    propertyName: "3 bed room fully furnished standard modern apartment",
+  },
+  {
+    state: "Abuja",
+    propertyPrice: 1000000,
+    propertyImage: "../properties/house-placeholder.jpg",
+    type: "for sale",
+    location: "FCT ",
+    propertyName: "2 bed room fully furnished standard modern apartment",
+  },
+];
