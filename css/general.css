@@ -129,6 +129,9 @@ nav ul li a {
   margin: 5px 20px;
   margin-bottom: 30px;
 }
+.search-temp ul li a:hover {
+  color: var(--primari-color);
+}
 #home-search-buttons {
   cursor: pointer;
 }
@@ -167,7 +170,18 @@ nav ul li a {
     padding: 12px 0px;
   }
   .search-temp {
-    width: 70%;
-    height: 200px;
+    position: absolute;
+    width: 100%;
+    background-color: white;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    top: 80px;
+    overflow-y: auto;
+  }
+
+  .search-temp ul li {
+    width: 100%;
+    padding-bottom: 5px;
+    margin: 5px 0px 20px 10px;
   }
 }

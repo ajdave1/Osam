@@ -117,13 +117,17 @@ searchInput.addEventListener("keydown", event => {
   let homeSearchbtn = document.querySelectorAll("#home-search-buttons");
   homeSearchbtn.forEach(btn => {
     btn.addEventListener("click", () => {
-      console.log(btn.innerHTML);
       searchproperty(btn.innerHTML);
+      searchInput.value = btn.innerHTML;
+      searchTemp.classList.remove("view-item");
+      searchTemp.classList.add("hide-item");
     });
   });
 
   if (event.key === "Enter") {
     searchFunction();
+    searchTemp.classList.remove("view-item");
+    searchTemp.classList.add("hide-item");
   }
 });
 
@@ -167,8 +171,15 @@ function searchproperty(opt) {
     document.querySelector(
       ".location-image"
     ).innerHTML = ` <img src="./property-location/${el.state.toLocaleLowerCase()}.png">`;
-    rendersearch(el);
+
+    const images = el.propertyImage;
+    let imagesString = "";
+    images.forEach(image => {
+      imagesString += `<img src ="${image}">`;
+    });
+    rendersearch(el, imagesString, el.uid);
   });
+  imageScroller();
 }
 
 function rendersearchcont(location) {
@@ -183,28 +194,36 @@ function rendersearchcont(location) {
   `;
 }
 
-function rendersearch(prop) {
+function rendersearch(property, imgs, uid) {
   document.querySelector(".properties-at-location").innerHTML += `
-    <div class="property-card">
+   
+                     
+                    <div class="property-card">
                         <div class="bx bxs-heart" id="save-property"></div>
-                        <div class="property-image">
-                            <img src="./properties/${prop.propertyImage}">
+                        <div class="property-image" data-uid = "${uid}">
+                           ${imgs}
+                        </div>
+                        <div class="property-image-toggler" >
+                            <button class="bx bx-chevron-left" id="property-image-left" data-uid = "${uid}"></button>
+                            <button class="bx bx-chevron-right" id="property-image-right" data-uid = "${uid}"></button>
                         </div>
                         <div class="property-bottom">
                             <div>
-                                <h4>${prop.propertyName}</h4>
-                                <p class="type">${prop.type}</p>
+                                <h4>${property.propertyName}</h4>
+                                <p class="type">${property.type}</p>
                             </div>
-                            <p><span id="currency">NGN</span>${prop.propertyPrice}</p>
-                            <p><i class='bx bxs-map-pin bx-burst'></i> ${prop.location}</p>
+                            <p><span id="currency">NGN</span>${property.propertyPrice}</p>
+                            <p><i class='bx bxs-map-pin bx-burst'></i> ${property.location}</p>
                             <div class="contact">
-                                <a href="https://wa.me/+2347031679246" class="callus"> <i
-                                        class='bx bxl-whatsapp '></i> &nbsp;</a>
+                                <a href="https://wa.me/+2347031679246" class="callus"> <i class='bx bxl-whatsapp '></i>
+                                    &nbsp;</a>
                                 <span>&nbsp; | &nbsp; </span> <a href="mailto:sam@osam.gmail.com"
-                                   class="bx bx-envelope emailus"></a>
+                                    class="bx bx-envelope emailus"></a>
                             </div>
                         </div>
                     </div>
+              </div>
+                    
   
   `;
 }
@@ -237,50 +256,21 @@ function viewmobilenav(nav, btnO, btnC) {
   });
 }
 function showAllProperties(type) {
-  const arr = [];
-  properteas.forEach(prop => {
-    const properties = prop.properties;
-    properties.map(prop => {
-      if (prop.type === type) {
-        arr.push(prop);
-      }
-    });
-
-    document.querySelector(
-      ".properties"
-    ).innerHTML = ` <div class="properties-at-location">
-  </div>`;
-    arr.forEach(prop => {
-      let container = document.querySelector(".properties-at-location");
-      container.classList.add(".allproperties-style");
-      container.style = "width:95%; justify-content: center; ";
-      const property = prop;
-
-      container.innerHTML += `
-          <div class="property-card">
-                              <div class="bx bxs-heart" id="save-property"></div>
-                              <div class="property-image">
-                                  <img src="./properties/${property.propertyImage}">
-                              </div>
-                              <div class="property-bottom">
-                                  <div>
-                                      <h4>${property.propertyName}</h4>
-                                      <p class="type">${property.type}</p>
-                                  </div>
-                                  <p><span id="currency">NGN</span>${property.propertyPrice}</p>
-                                  <p><i class='bx bxs-map-pin bx-burst'></i> ${property.location}</p>
-                                  <div class="contact">
-                                      <a href="https://wa.me/+2347031679246" class="callus"> <i
-                                              class='bx bxl-whatsapp '></i> &nbsp;</a>
-                                      <span>&nbsp; | &nbsp; </span> <a href="mailto:sam@osam.gmail.com"
-                                         class="bx bx-envelope emailus"></a>
-                                  </div>
-                              </div>
-                          </div>
-                           </div>
-        `;
-    });
+  document.querySelector(".properties").innerHTML = `
+  <div class="properties-at-location" style="width:100%;"> </div>
+  `;
+  proper.forEach(el => {
+    if (type === el.type) {
+      console.log(el);
+      const images = el.propertyImage;
+      let imagesString = "";
+      images.forEach(image => {
+        imagesString += `<img src ="${image}">`;
+      });
+      rendersearch(el, imagesString, el.uid);
+    }
   });
+  imageScroller();
 }
 
 function notify(message) {
@@ -293,5 +283,33 @@ function notify(message) {
     notification.classList.remove("view-notification");
   }, 3000);
 }
+function imageScroller() {
+  const propertyImage = document.querySelectorAll(".property-image");
+  const propertyImage_left = document.querySelectorAll("#property-image-left");
+  const propertyImage_right = document.querySelectorAll(
+    "#property-image-right"
+  );
 
-// notify("This is notification");
+  propertyImage_right.forEach(btn => {
+    btn.addEventListener("click", () => {
+      let id = btn.dataset.uid;
+      propertyImage.forEach(el => {
+        if (el.dataset.uid == id) {
+          let width = el.offsetWidth;
+          el.scrollLeft += width;
+        }
+      });
+    });
+  });
+  propertyImage_left.forEach(btn => {
+    btn.addEventListener("click", () => {
+      let id = btn.dataset.uid;
+      propertyImage.forEach(el => {
+        if (el.dataset.uid == id) {
+          let width = el.offsetWidth;
+          el.scrollLeft -= width;
+        }
+      });
+    });
+  });
+}

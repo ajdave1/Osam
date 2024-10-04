@@ -1,4 +1,3 @@
-// import propeties from "./propeties";
 const homenav = document.querySelector(".home-nav");
 const homeNav = document.querySelector(".home-navigation-list");
 const usernav = document.querySelector(".user-navigation");
@@ -6,30 +5,30 @@ const toggleUserNav = document.querySelector(".user-profile-image");
 const homeanchor = document.querySelectorAll("#home-anchor");
 const propertiesContainer = properties;
 savesearch.addEventListener("click", () => {
+  let properties = [];
   const propDetails = propertyDetails();
   const location = propDetails.locate.toLowerCase().trim();
   const type = propDetails.type.toLowerCase().trim();
   const maxprice = propDetails.defaultMaxprice;
   const minprice = Number(propDetails.defaultMinprice);
-
-  properteas.map(prop => {
-    if (prop.location === location) {
-      const properties = prop.properties;
-      rendersearchcont(location);
-      properties.forEach(property => {
-        if (
-          property.propertyPrice >= minprice &&
-          property.propertyPrice < maxprice &&
-          property.type === type
-        ) {
-          console.log(property.type);
-          console.log(type);
-          console.log(property);
-          rendersearch(property);
-          toggleDropdowns("both");
-          return;
-        }
-      });
+  let searching = propDetails.locate;
+  proper.map(prop => {
+    const location =
+      prop.location.toLocaleLowerCase().trim() +
+      " " +
+      prop.state.toLocaleLowerCase().trim();
+    const found = location.includes(searching);
+    if (found) {
+      properties.push(prop);
+    }
+  });
+  properties.forEach(el => {
+    if (
+      el.type === type &&
+      el.propertyPrice >= minprice &&
+      el.propertyPrice <= maxprice
+    ) {
+      searchproperty();
     }
   });
 });

@@ -1,78 +1,85 @@
-const properteas = [
-  {
-    id: "1",
-    location: "ibadan",
-    properties: [
-      {
-        uid: "1",
-        propertyPrice: 1000000,
-        propertyImage: "../properties/house-placeholder.jpg",
-        type: "for rent",
-        location: "Bodija-Estate ",
-        propertyName: "3 bed room fully furnished standard modern apartment",
-      },
-      {
-        uid: "2",
-        propertyPrice: 1000000,
-        propertyImage: "../properties/house-placeholder.jpg",
-        type: "for sale",
-        location: "Sango-Estate ",
-        propertyName: "4 bed room fully furnished standard modern apartment",
-      },
-    ],
-  },
+// const properteas = [
+//   {
+//     id: "1",
+//     location: "ibadan",
+//     properties: [
+//       {
+//         uid: "1",
+//         propertyPrice: 1000000,
+//         propertyImage: "../properties/house-placeholder.jpg",
+//         type: "for rent",
+//         location: "Bodija-Estate ",
+//         propertyName: "3 bed room fully furnished standard modern apartment",
+//       },
+//       {
+//         uid: "2",
+//         propertyPrice: 1000000,
+//         propertyImage: "../properties/house-placeholder.jpg",
+//         type: "for sale",
+//         location: "Sango-Estate ",
+//         propertyName: "4 bed room fully furnished standard modern apartment",
+//       },
+//     ],
+//   },
 
-  {
-    id: "2",
-    location: "lagos",
-    properties: [
-      {
-        uid: "1",
-        propertyPrice: 1000000,
-        propertyImage: "../properties/house-placeholder.jpg",
-        type: "for rent",
-        location: "Lekki-Phase 1 ",
-        propertyName: "5 bed room fully furnished standard modern apartment",
-      },
-      {
-        uid: "2",
-        propertyPrice: 1000000,
-        propertyImage: "../properties/house-placeholder.jpg",
-        type: "for sale",
-        location: "Banana Island",
-        propertyName: "4 bed room fully furnished standard modern apartment",
-      },
-    ],
-  },
-  {
-    id: "3",
-    location: "abuja",
-    properties: [
-      {
-        uid: "1",
-        propertyPrice: 1000000,
-        propertyImage: "../properties/house-placeholder.jpg",
-        type: "for rent",
-        location: "Transcorp",
-        propertyName: "3 bed room fully furnished standard modern apartment",
-      },
-      {
-        uid: "2",
-        propertyPrice: 1000000,
-        propertyImage: "../properties/house-placeholder.jpg",
-        type: "for sale",
-        location: "FCT ",
-        propertyName: "2 bed room fully furnished standard modern apartment",
-      },
-    ],
-  },
-];
+//   {
+//     id: "2",
+//     location: "lagos",
+//     properties: [
+//       {
+//         uid: "1",
+//         propertyPrice: 1000000,
+//         propertyImage: "../properties/house-placeholder.jpg",
+//         type: "for rent",
+//         location: "Lekki-Phase 1 ",
+//         propertyName: "5 bed room fully furnished standard modern apartment",
+//       },
+//       {
+//         uid: "2",
+//         propertyPrice: 1000000,
+//         propertyImage: "../properties/house-placeholder.jpg",
+//         type: "for sale",
+//         location: "Banana Island",
+//         propertyName: "4 bed room fully furnished standard modern apartment",
+//       },
+//     ],
+//   },
+//   {
+//     id: "3",
+//     location: "abuja",
+//     properties: [
+//       {
+//         uid: "1",
+//         propertyPrice: 1000000,
+//         propertyImage: "../properties/house-placeholder.jpg",
+//         type: "for rent",
+//         location: "Transcorp",
+//         propertyName: "3 bed room fully furnished standard modern apartment",
+//       },
+//       {
+//         uid: "2",
+//         propertyPrice: 1000000,
+//         propertyImage: "../properties/house-placeholder.jpg",
+//         type: "for sale",
+//         location: "FCT ",
+//         propertyName: "2 bed room fully furnished standard modern apartment",
+//       },
+//     ],
+//   },
+// ];
 const proper = [
   {
     state: "Ibadan",
     uid: "1",
     propertyPrice: 1000000,
-    propertyImage: "../properties/house-placeholder.jpg",
+    propertyImage: [
+      "../properties/6a13fa54c203304d587994dce66bbc55-p_e.webp",
+      "../properties/fd8ea32c2abcef7ee9be26a91160ff82-p_e.webp",
+      "../properties/fd8ea32c2abcef7ee9be26a91160ff82-p_e.webp",
+      "../properties/0e3b5ef2c8bf155382841743f5fcf829-p_e.webp",
+      "../properties/house-front",
+      "../properties/3c31e3e675a667cec7a4e9b9c911b28b-p_e.webp",
+    ],
     type: "for rent",
     location: "Bodija-Estate ",
     propertyName: "3 bed room fully furnished standard modern apartment",
@@ -81,7 +88,13 @@ const proper = [
     state: "Ibadan",
     uid: "2",
     propertyPrice: 1000000,
-    propertyImage: "../properties/house-placeholder.jpg",
+    propertyImage: [
+      "../properties/6a13fa54c203304d587994dce66bbc55-p_e.webp",
+      "../properties/fd8ea32c2abcef7ee9be26a91160ff82-p_e.webp",
+      "../properties/fd8ea32c2abcef7ee9be26a91160ff82-p_e.webp",
+      "../properties/0e3b5ef2c8bf155382841743f5fcf829-p_e.webp",
+      "../properties/house-front",
+    ],
     type: "for sale",
     location: "Sango-Estate ",
     propertyName: "4 bed room fully furnished standard modern apartment",
@@ -89,16 +102,32 @@ const proper = [
 
   {
     state: "Lagos",
+    uid: "3",
     propertyPrice: 1000000,
-    propertyImage: "../properties/house-placeholder.jpg",
+    propertyImage: [
+      "../properties/6a13fa54c203304d587994dce66bbc55-p_e.webp",
+      "../properties/3c31e3e675a667cec7a4e9b9c911b28b-p_e.webp",
+      "../properties/fd8ea32c2abcef7ee9be26a91160ff82-p_e.webp",
+      "../properties/fd8ea32c2abcef7ee9be26a91160ff82-p_e.webp",
+      "../properties/0e3b5ef2c8bf155382841743f5fcf829-p_e.webp",
+      "../properties/house-front",
+    ],
     type: "for rent",
     location: "Lekki-Phase 1 ",
     propertyName: "5 bed room fully furnished standard modern apartment",
   },
   {
     state: "Lagos",
+    uid: "4",
     propertyPrice: 1000000,
-    propertyImage: "../properties/house-placeholder.jpg",
+    propertyImage: [
+      "../properties/6a13fa54c203304d587994dce66bbc55-p_e.webp",
+      "../properties/fd8ea32c2abcef7ee9be26a91160ff82-p_e.webp",
+      "../properties/fd8ea32c2abcef7ee9be26a91160ff82-p_e.webp",
+      "../properties/0e3b5ef2c8bf155382841743f5fcf829-p_e.webp",
+      "../properties/house-front",
+      "../properties/3c31e3e675a667cec7a4e9b9c911b28b-p_e.webp",
+    ],
     type: "for sale",
     location: "Banana Island",
     propertyName: "4 bed room fully furnished standard modern apartment",
@@ -106,18 +135,18 @@ const proper = [
 
   {
     state: "Abuja",
+    uid: "5",
     propertyPrice: 1000000,
-    propertyImage: "../properties/house-placeholder.jpg",
+    propertyImage: [
+      ,
+      "../properties/fd8ea32c2abcef7ee9be26a91160ff82-p_e.webp",
+      "../properties/fd8ea32c2abcef7ee9be26a91160ff82-p_e.webp",
+      "../properties/0e3b5ef2c8bf155382841743f5fcf829-p_e.webp",
+      "../properties/house-front",
+      "../properties/3c31e3e675a667cec7a4e9b9c911b28b-p_e.webp",
+    ],
     type: "for rent",
     location: "Transcorp",
     propertyName: "3 bed room fully furnished standard modern apartment",
-  },
-  {
-    state: "Abuja",
-    propertyPrice: 1000000,
-    propertyImage: "../properties/house-placeholder.jpg",
-    type: "for sale",
-    location: "FCT ",
-    propertyName: "2 bed room fully furnished standard modern apartment",
   },
 ];
