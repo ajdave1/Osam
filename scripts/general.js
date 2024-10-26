@@ -13,8 +13,6 @@ const minPrice = document.getElementById("min-p");
 const maxPrice = document.getElementById("max-p");
 const getPrice = document.getElementById("get-price");
 const properties = document.querySelector(".properties");
-const opennav = document.getElementById("open-nav");
-const closenav = document.getElementById("close-nav");
 const navigation = document.querySelector(".navigation");
 const notification = document.querySelector(".notification");
 const note = document.querySelector(".notification-message");
@@ -26,14 +24,35 @@ let defaultMaxprice = 10000000;
 
 //SPOT
 
-getType.addEventListener("click", () => {
-  const selectedradio = Array.prototype.find.call(option, selected => {
-    return selected.checked;
+function select() {
+  getType.addEventListener("click", () => {
+    const selectedradio = Array.prototype.find.call(option, selected => {
+      return selected.checked;
+    });
+    const selectedValue = selectedradio;
+    viewType.innerHTML = "For" + " " + selectedValue.value;
+    toggleDropdowns("both");
   });
-  const selectedValue = selectedradio;
-  viewType.innerHTML = "For" + " " + selectedValue.value;
-  toggleDropdowns("both");
-});
+  properties.addEventListener("click", () => {
+    toggleDropdowns("both");
+    searchTemp.classList.add("hide-item");
+    searchTemp.classList.remove("view-item");
+  });
+  viewTypedrop.addEventListener("click", () => toggleDropdowns("Type"));
+  viewPricedrop.addEventListener("click", () => toggleDropdowns("Price"));
+  // TODO;
+  getPrice.addEventListener("click", () => {
+    if (minPrice.value < 200000) {
+      window.alert("Please enter any price above 200,000");
+      return;
+    }
+    defaultMinprice = minPrice.value;
+    defaultMaxprice = maxPrice.value;
+    viewPrice.innerHTML = "Saved";
+    toggleDropdowns("both");
+  });
+}
+select();
 
 function toggleDropdowns(mes) {
   if (mes === "Type") {
@@ -53,24 +72,7 @@ function toggleDropdowns(mes) {
     price_drop_down.classList.remove("view-item");
   }
 }
-properties.addEventListener("click", () => {
-  toggleDropdowns("both");
-  searchTemp.classList.add("hide-item");
-  searchTemp.classList.remove("view-item");
-});
-viewTypedrop.addEventListener("click", () => toggleDropdowns("Type"));
-viewPricedrop.addEventListener("click", () => toggleDropdowns("Price"));
-// TODO;
-getPrice.addEventListener("click", () => {
-  if (minPrice.value < 200000) {
-    window.alert("Please enter any price above 200,000");
-    return;
-  }
-  defaultMinprice = minPrice.value;
-  defaultMaxprice = maxPrice.value;
-  viewPrice.innerHTML = "Saved";
-  toggleDropdowns("both");
-});
+
 //break-line FUNCTIONs
 function propertyDetails() {
   let locate = searchInput.value;
@@ -86,51 +88,48 @@ function propertyDetails() {
   return propertyDetails;
 }
 
-// function handleKey(event) {
-//   if (event.key === "Enter") {
-//     searchFunction();
-//   }
-// }
-searchInput.addEventListener("keydown", event => {
-  searchTemp.classList.add("view-item");
-  searchTemp.classList.remove("hide-item");
-  const searching = searchInput.value.toLowerCase();
-  let locals = [];
-  proper.forEach(prop => {
-    const location =
-      prop.location.toLocaleLowerCase().trim() +
-      " " +
-      prop.state.toLocaleLowerCase().trim();
-    const found = location.includes(searching);
-    if (found) {
-      locals.push(location);
-    }
-  });
+function suggest() {
+  searchInput.addEventListener("keydown", event => {
+    searchTemp.classList.add("view-item");
+    searchTemp.classList.remove("hide-item");
+    const searching = searchInput.value.toLowerCase();
+    let locals = [];
+    proper.forEach(prop => {
+      const location =
+        prop.location.toLocaleLowerCase().trim() +
+        " " +
+        prop.state.toLocaleLowerCase().trim();
+      const found = location.includes(searching);
+      if (found) {
+        locals.push(location);
+      }
+    });
 
-  searchUL.innerHTML = "";
-  locals.forEach(local => {
-    searchUL.innerHTML += `
-        <li><a id="home-search-buttons" >${local}</a></li>
-     `;
-  });
+    searchUL.innerHTML = "";
+    locals.forEach(local => {
+      searchUL.innerHTML += `
+          <li><a id="home-search-buttons" >${local}</a></li>
+       `;
+    });
 
-  let homeSearchbtn = document.querySelectorAll("#home-search-buttons");
-  homeSearchbtn.forEach(btn => {
-    btn.addEventListener("click", () => {
-      searchproperty(btn.innerHTML);
-      searchInput.value = btn.innerHTML;
+    let homeSearchbtn = document.querySelectorAll("#home-search-buttons");
+    homeSearchbtn.forEach(btn => {
+      btn.addEventListener("click", () => {
+        searchproperty(btn.innerHTML);
+        searchInput.value = btn.innerHTML;
+        searchTemp.classList.remove("view-item");
+        searchTemp.classList.add("hide-item");
+      });
+    });
+
+    if (event.key === "Enter") {
+      searchFunction();
       searchTemp.classList.remove("view-item");
       searchTemp.classList.add("hide-item");
-    });
+    }
   });
-
-  if (event.key === "Enter") {
-    searchFunction();
-    searchTemp.classList.remove("view-item");
-    searchTemp.classList.add("hide-item");
-  }
-});
-
+}
+suggest();
 searchButton.addEventListener("click", () => {
   searchFunction();
 });

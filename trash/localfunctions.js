@@ -1,5 +1,4 @@
 const searchInput = document.querySelector(".home-search-input");
-
 function propertyDetails() {
   let locate = searchInput.value;
   locate.toLowerCase();

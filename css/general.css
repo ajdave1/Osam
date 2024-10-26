@@ -88,6 +88,9 @@ nav ul li a {
   justify-content: center;
   align-items: center;
 }
+#save-property {
+  z-index: 4;
+}
 .notification {
   background-color: rgb(5, 69, 113);
 

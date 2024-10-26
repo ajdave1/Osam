@@ -30,16 +30,16 @@
 
             </div>
             <ul>
-                <li><a onclick="showAllProperties('for rent')" id="home-anchor">Rent </a> </li>
+                <li><a id="home-anchor " class="home-anchor-link">Rent </a> </li>
 
-                <li><a onclick="showAllProperties('for sale')" id="home-anchor"> Buy</a></li>
+                <li><a id="home-anchor" class=" home-anchor-link">Buy</a></li>
                 <li><a href="form.html" id="home-anchor"> Sell</a></li>
                 <li><a href="home.html" id="home-anchor"> Help</a></li>
             </ul>
 
         </div>
         <div class="side-buttons">
-            <div class="profile-details">
+            <div class="profile-details hide-item">
                 <div class="user-profile-image">
                     <img src="./assets/user avatar female.avif" alt=" profile image ">
                 </div>
@@ -54,6 +54,9 @@
                     </button>
                 </div>
 
+            </div>
+            <div class="view-item sign-in-button">
+                Sign In
             </div>
         </div>
         <div class=" bx bx-menu open-mobile-nav" id="open-nav">
@@ -160,9 +163,8 @@
     <div class="notification hide-notification">
         <p class="notification-message"> notification</p>
     </div>
-    <script src="./scripts/general.js"></script>
-    <script src="./scripts/propeties.js"></script>
-    <script src="./scripts/home.js" type="module"></script>
+
+    <script type="module" src="./scripts/home.js"></script>
 
 </body>
 
